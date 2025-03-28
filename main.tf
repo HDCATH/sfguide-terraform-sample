@@ -93,3 +93,12 @@ resource "snowflake_grant_account_role" "grants" {
   user_name = snowflake_user.user.name
 }
 
+##########################################
+
+#----- Module Definition
+module "tf_demo" {
+    source = "./modules/tf_demo"
+    db_name = "TF_DEMO"
+    schema_name = "TF_DEMO"
+	env_suffix = "DEV"
+}
